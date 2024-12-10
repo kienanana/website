@@ -6,6 +6,22 @@ body {
     background-color: #000;
 }
 
+header h1, header nav a {
+    font-size: 1.25rem;      /* Set desired size */
+    font-family: monospace, monospace !important;
+    color: #fff;
+    display: inline-block;   /* Ensure both are inline-block so they behave similarly */
+    text-decoration: none;
+}
+
+header h1 {
+    word-spacing: -0.5rem;
+}
+
+header nav {
+    word-spacing: 1.5rem;
+}
+
 header {
     position: sticky;
     top: 0;
@@ -14,23 +30,10 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 1rem 5rem; /* 1rem of vertical padding, 2rem of horizontal padding */
-    font-size: 0.75rem;
 }
-
-header nav a {
-    color: #fff;
-    text-decoration: none;
-    font-family: monospace, monospace;
-}
-
 
 main {
     padding: 2rem;
-}
-
-#home header h1,
-#home header h4 {
-    margin: 0.25rem;
 }
 
 #about {
@@ -38,6 +41,14 @@ main {
     /* font-family: Helvetica, Arial, sans-serif; */
 }
 
-#about h2 {
+#about h1 {
     color: #a167ff
+}
+
+#contact h1, h5 {
+    margin: 0.25rem;
+}
+
+#contact h1 {
+    color: #ffb120;
 }
