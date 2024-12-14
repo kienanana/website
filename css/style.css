@@ -43,9 +43,10 @@ main {
 }
 
 #home {
-    /* background: 
-        url('../images/test-chain.png') no-repeat center center fixed; /* Background image */
-    /* background-size:auto; /* Ensure the image covers the entire viewport */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
 }
 
 #home h1 {
@@ -54,6 +55,11 @@ main {
 
 #home h1, h4 {
     margin:0;
+}
+
+#ball3D {
+    max-width: 50%; /* Adjust as needed */
+    height: 200px; /* Set appropriate height */
 }
 
 #about {
