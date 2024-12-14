@@ -29,16 +29,22 @@ const loader = new GLTFLoader();
 
 //load the file
 loader.load(
-    `models/${objToRender}/scene.gltf`,
+    `models/${objToRender}/test.gltf`,
     function (gltf) {
         // if the file is loaded, add it to the scene
         object = gltf.scene;
-        object.scale.set(2,2,2);
+
+        // Center the model geometry
+        const box = new THREE.Box3().setFromObject(object); // Calculate bounding box
+        const center = box.getCenter(new THREE.Vector3()); // Get center of the bounding box
+        object.position.sub(center); // Offset the object to center it
+
+        object.scale.set(4,4,4);
         object.position.set(0,0,0);
         scene.add(object);
 
         // Set OrbitControls to focus on the ball
-        controls.target.set(0, 0, 0); // Focus camera rotation on the ball's center
+        controls.target.copy(center); // Focus camera rotation on the ball's center
         controls.update(); // Apply the target update
     },
     function (xhr) {
