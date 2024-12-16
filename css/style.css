@@ -6,26 +6,32 @@ body {
     background-color: #000;
 }
 
-header h1, header nav a {
-    font-size: 1.25rem;      /* Set desired size */
+header#header-title h2, header nav a {
     font-family: monospace, monospace !important;
     color: #fff;
     display: inline-block;   /* Ensure both are inline-block so they behave similarly */
     text-decoration: none;
 }
 
-header h1 {
+header#header-title h2 {
     word-spacing: -0.5rem;
+}
+
+#header-title {
+    display: flex;
+    justify-content:flex-start;
+    align-items: center;
 }
 
 header nav {
     word-spacing: 1.5rem;
+    font-size: 1.25rem;      /* Set desired size */
 }
 
 header img#icon {
     width: 60px;
     height: auto;
-    margin-right: -20rem;
+    margin-right: 1rem;
 }
 
 header {
@@ -43,11 +49,18 @@ main {
 }
 
 #home {
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.7)), 
+                      url('../images/codebg.png');
+    background-color: #000; /* Base background color */
+    background-repeat: no-repeat; /* Prevent tiling */
+    background-size: cover; /* Ensure the image covers the section */
+    background-position: center; /* Center the image */
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     padding: 1rem;
 }
+
 
 #home h1 {
     font-size: 3rem;
@@ -58,8 +71,45 @@ main {
 }
 
 #ball3D {
-    max-width: 50%; /* Adjust as needed */
-    height: 200px; /* Set appropriate height */
+    position: relative;
+    width: 300px; /* Adjust as needed */
+    height: 300px; /* Set appropriate height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#loading {
+    position: absolute; /* center within ball3D */
+    color:#fff;
+    font-size: 1rem;
+    font-family: monospace, sans-serif;
+    z-index: 10; /* ensure its above the ball's canvas */
+    text-align: center;
+}
+
+#home-text h1 {
+    border-right: 5px solid;
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    animation: 
+        typing 2s steps(23),
+        cursor .4s step-end infinite alternate;
+}
+
+/* cursor blinking */
+@keyframes cursor {
+    50% { border-color: transparent}
+}
+
+/* typing effect */
+@keyframes typing {
+    from { width: 0 }
+}
+
+#home-text, #ball3D {
+    margin: 1rem;
 }
 
 #about {
